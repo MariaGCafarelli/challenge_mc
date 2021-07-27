@@ -11,7 +11,7 @@ function Beer({ beer }) {
         <img src="" alt="beer-img" className="search-beer-img" />
       
       <div className="beer-description">
-        <h1 className="content content-large">LARGE BEER NAME TO TEST</h1>
+        <h1 className="content content-large">{beer.name}</h1>
         <p className="content content-medium">
           The only edge case we’re advised about is if the length of str is less
           than or equal to num, we need to just return str without truncating

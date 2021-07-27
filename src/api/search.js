@@ -26,19 +26,25 @@ function getBeersByName(name, setBeers, setLoader) {
 
 /**
  * Function with api call to get beers by brewed_before
+ * @param {String} date
+ * @param {int} page
  * @param {Function} setBeers
  * @param {Function} setLoader
- * @param {String} date
+ * @param {Function} setNext
+ * @param {Function} setPrev
  */
- function getBeersByDate(date, setBeers, setLoader) {
+ function getBeersByDate(date, page, setBeers, setLoader, setNext, setPrev) {
   setLoader(true);
-  fetch(`${process.env.REACT_APP_ROOT_ENDPOINT}beers?brewed_before=${date}?page=1&per_page=80`, {
+  fetch(`${process.env.REACT_APP_ROOT_ENDPOINT}beers?brewed_before=${date}&page=${page}&per_page=20`, {
     method: "GET",
   })
     .then((resp) => resp.json())
     .then((resp) => {
       console.log("response fecth", resp);
       setBeers(resp);
+      if(resp.length < 20) setNext(false);
+      else {setNext(true); setPrev(true)};
+      if(page === 1) setPrev(false);
       setLoader(false);
       //return resp
     })

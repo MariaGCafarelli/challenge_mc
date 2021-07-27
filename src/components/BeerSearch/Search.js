@@ -12,18 +12,48 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import TextField from "@material-ui/core/TextField";
+import Loader from "../Loader/Loader";
 
 function Search() {
   const classes = useStyles();
 
   const [value, setValue] = React.useState("name");
+  const [next, setNext] = React.useState(true);
+  const [prev, setPrev] = React.useState(false);
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState("");
   const [beerName, setBeerName] = useState("");
   const [selectedDate, setSelectedDate] = React.useState("07-2021");
-  const [beers, setBeers] = useState([]);
+  const [beers, setBeers] = useState();
   /** State to set loader during beer changes */
-  let [loader, setLoader] = useState(true);
+  let [loader, setLoader] = useState(false);
+  const [page, setPage] = React.useState(1);
+
+  const nextPage = (event, value) => {
+    setPage(page + 1);
+    getBeersByDate(
+      selectedDate,
+      page + 1,
+      setBeers,
+      setLoader,
+      setNext,
+      setPrev
+    );
+  };
+
+  const prevPage = (event, value) => {
+    if (page > 1) {
+      setPage(page - 1);
+      getBeersByDate(
+        selectedDate,
+        page - 1,
+        setBeers,
+        setLoader,
+        setNext,
+        setPrev
+      );
+    }
+  };
 
   const handleRadioChange = (event) => {
     setValue(event.target.value);
@@ -52,8 +82,8 @@ function Search() {
       if (beerName.length > 0) getBeersByName(beerName, setBeers, setLoader);
       else setHelperText("First type something!");
     } else if (value === "brewed_before") {
-        getBeersByDate(selectedDate, setBeers, setLoader);
-      setHelperText("Sorry, wrong answer!");
+      getBeersByDate(selectedDate, 1, setBeers, setLoader, setNext, setPrev);
+      setPage(1);
     } else {
       setHelperText("Please select an option");
     }
@@ -61,19 +91,26 @@ function Search() {
 
   return (
     <>
+      <button disabled={!next} onClick={nextPage}>
+        Next
+      </button>
+      <button disabled={!prev} onClick={prevPage}>
+        Prev
+      </button>
+
       <div className="search-form">
         {value === "name" ? (
-            <>
-          <div component="form" className={classes.root}>
-            <InputBase
-              className={classes.input}
-              placeholder="Search"
-              onChange={handleChange}
-            />
-            <SearchIcon className={classes.icon} />
-          </div>
+          <>
+            <div component="form" className={classes.root}>
+              <InputBase
+                className={classes.input}
+                placeholder="Search"
+                onChange={handleChange}
+              />
+              <SearchIcon className={classes.icon} />
+            </div>
             <FormHelperText>{helperText}</FormHelperText>
-            </>
+          </>
         ) : (
           <TextField
             variant="outlined"
@@ -123,7 +160,12 @@ function Search() {
           </FormControl>
         </form>
       </div>
-      <Beer />
+      {beers
+        ? beers.length > 0
+          ? beers.map((beer, index) => <Beer beer={beer} key={index}/>)
+          : null
+        : null}
+    {loader && <Loader />}  
     </>
   );
 }
