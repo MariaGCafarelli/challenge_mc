@@ -1,0 +1,50 @@
+/** Global CSS styles **/
+
+/** Content typography classes **/
+
+.content {
+  font-family: var(--font-family-content) !important;
+  color: var(--off-black);
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+/** You must use any .content-X class with the .content class **/
+
+.content-large {
+  font-size: 23px;
+  line-height: 28px;
+  padding: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.content-medium {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.content-small {
+  font-size: 10px;
+  line-height: 15px;
+}
+
+.semi-strong {
+  font-weight: 600 !important;
+}
+
+.strong {
+  font-weight: 700 !important;
+}
+
+/** You must use the .button-font class with the .content class **/
+.btn-font {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+input,
+select {
+  font-size: 16px;
+}
