@@ -91,13 +91,6 @@ function Search() {
 
   return (
     <>
-      <button disabled={!next} onClick={nextPage}>
-        Next
-      </button>
-      <button disabled={!prev} onClick={prevPage}>
-        Prev
-      </button>
-
       <div className="search-form">
         {value === "name" ? (
           <>
@@ -160,12 +153,24 @@ function Search() {
           </FormControl>
         </form>
       </div>
-      {beers
-        ? beers.length > 0
-          ? beers.map((beer, index) => <Beer beer={beer} key={index}/>)
-          : null
-        : null}
-    {loader && <Loader />}  
+      {beers ? (
+        beers.length > 0 ? (
+          <>
+          <button disabled={!next} onClick={nextPage}>
+              Next
+            </button><span>{page}</span>
+            <button disabled={!prev} onClick={prevPage}>
+              Prev
+            </button>
+            {beers.map((beer, index) => (
+              <Beer beer={beer} key={index} />
+            ))}
+            
+          </>
+        ) : null
+      ) : null}
+
+      {loader && <Loader />}
     </>
   );
 }
