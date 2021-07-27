@@ -1,0 +1,22 @@
+.beer {
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+  box-shadow: -1px 2px 5px rgba(128, 120, 140, 0.2) !important;
+  border: 1px solid var(--uiLightGrey);
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-beer-img {
+  text-align: center;
+  width: 50px;
+  height: auto;
+  background-color: var(--uiLightGrey);
+}
+
+.beer-description {
+  width: 85%;
+}

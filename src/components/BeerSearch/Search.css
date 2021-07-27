@@ -1,0 +1,21 @@
+.search-form{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+    width: 90%;
+    margin: auto;
+    margin-top: 35px;
+}
+
+.MuiFormControl-root {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+}
+
+.MuiOutlinedInput-root {
+    width: 100% !important;
+}
