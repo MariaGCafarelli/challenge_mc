@@ -34,20 +34,13 @@ function PaginationButtons({
         setPrev
       );
     }
-  }
+  };
 
   function prevPage() {
     if (page > 1) {
       setPage(page - 1);
       if (value === "name") {
-        getBeersByName(
-          beerName,
-          page - 1,
-          setBeers,
-          setLoader,
-          setNext,
-          setPrev
-        );
+        getBeersByName(beerName, page - 1, setBeers, setLoader, setNext, setPrev);
       } else {
         getBeersByDate(
           selectedDate,

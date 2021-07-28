@@ -1,5 +1,16 @@
 import { getBeersByName, getBeersByDate } from "../api/search";
+import { getRandomBeer, getRadomNonAlcoholic } from "../api/beer";
 
+/**
+ * Function to handle form submit
+ * @param {event} event
+ * @param {Function} setBeers
+ * @param {Function} setLoader
+ * @param {Function} setNext
+ * @param {Function} setPrev
+ * @param {Function} setHelperText
+ * @param {Function} setPage
+ */
 function handleSubmit(
   event,
   beerName,
@@ -26,6 +37,12 @@ function handleSubmit(
   }
 }
 
+/**
+ * Function to handle input change on search by name
+ * @param {event} event
+ * @param {Function} setHelperText
+ * @param {Function} setBeerName
+ */
 function handleNameChange(event, setHelperText, setBeerName) {
   event.preventDefault();
   const { name, value } = event.target;
@@ -34,14 +51,52 @@ function handleNameChange(event, setHelperText, setBeerName) {
   setBeerName(value);
 }
 
+/**
+ * Function to set radio selection change
+ * as search type
+ * @param {event} event
+ * @param {Function} setValue
+ */
 function handleRadioChange(event, setValue) {
   setValue(event.target.value);
 }
 
+/**
+ * Function to set selected date
+ * @param {String} date
+ * @param {Function} setSelectedDate
+ */
 function handleDateChange(date, setSelectedDate) {
   setSelectedDate(
     date.target.value.slice(5, 7) + "-" + date.target.value.slice(0, 4)
   );
 }
 
-export { handleSubmit, handleNameChange, handleRadioChange, handleDateChange };
+/**
+ * Function to set new random beer
+ * @param {Function} setBeer
+ * @param {Function} setLoader
+ */
+function handlerGetBeer(setBeer, setLoader) {
+  getRandomBeer(setBeer, setLoader);
+}
+
+/**
+ * Function to set new non alcoholic random beer
+ * @param {event} event
+ * @param {Function} setBeer
+ * @param {Function} setLoader
+ */
+function handlerGetNonAlcoholic(event, setBeer, setLoader) {
+  event.preventDefault();
+  getRadomNonAlcoholic(setBeer, setLoader);
+}
+
+export {
+  handleSubmit,
+  handleNameChange,
+  handleRadioChange,
+  handleDateChange,
+  handlerGetBeer,
+  handlerGetNonAlcoholic
+};

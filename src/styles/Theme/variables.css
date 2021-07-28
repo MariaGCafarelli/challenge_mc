@@ -10,19 +10,13 @@
   /** Primary colors **/
 
   --primaryDark: #18202c;
-  --primaryIndigo: #6c62d9;
-  --primaryBright: #80e8e8;
 
   /** UI colors **/
   --off-black: #0b0b26;
   --off-white: #fafdfd;
   --background: #fafafa;
   --error: #ef1b26;
-  --success: #36f36b;
   --uiDarkGrey: #7b788d;
   --uiMidGrey: #b8b6c7;
   --uiLightGrey: #f8f7fc;
-  --shadow: rgba(206, 217, 224, 0.5);
-  --disabled: #f0f0f0;
-  --disabledFont: #666666;
 }

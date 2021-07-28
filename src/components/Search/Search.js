@@ -15,6 +15,12 @@ import FormControl from "@material-ui/core/FormControl";
 import Loader from "../Loader/Loader";
 import PaginationButtons from "../PaginationButtons/PaginationBUttons";
 
+/**
+ * Componente that represents the
+ * control of each search, 
+ * validation of the form and pagination state 
+ * to display beers found
+ */
 function Search() {
 
   /**
@@ -22,15 +28,15 @@ function Search() {
    * selectedDate on the calendar, page to control pagiation
    * beerName as the user input, current beers searched and loader
    * */
-  const [value, setValue] = React.useState("name");
+  const [value, setValue] = useState("name");
   const [beerName, setBeerName] = useState("");
-  const [next, setNext] = React.useState(true);
-  const [prev, setPrev] = React.useState(false);
-  const [helperText, setHelperText] = React.useState("");
-  const [selectedDate, setSelectedDate] = React.useState("07-2021");
+  const [next, setNext] = useState(true);
+  const [prev, setPrev] = useState(false);
+  const [helperText, setHelperText] = useState("");
+  const [selectedDate, setSelectedDate] = useState("07-2021");
   const [beers, setBeers] = useState();
   const [loader, setLoader] = useState(false);
-  const [page, setPage] = React.useState(1);
+  const [page, setPage] = useState(1);
 
   return (
     <>

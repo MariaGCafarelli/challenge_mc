@@ -11,7 +11,9 @@ import TextField from "@material-ui/core/TextField";
 
 /**
  * Componente that represents the
- * detail of each beer searched
+ * type of input to search, by name or by date
+ * uses material styles to change root components
+ * Input, TextField, Icons and HelperText
  */
 function Search({
   value,
