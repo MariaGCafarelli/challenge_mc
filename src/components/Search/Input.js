@@ -35,6 +35,7 @@ function Search({
               onChange={(event) =>
                 handleNameChange(event, setHelperText, setBeerName)
               }
+              pattern="[A-Za-z0-9_-]{1,15}"
             />
             <SearchIcon className={classes.icon} />
           </div>

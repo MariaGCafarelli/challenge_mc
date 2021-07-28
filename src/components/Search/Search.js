@@ -50,6 +50,7 @@ function Search() {
               beerName,
               value,
               selectedDate,
+              helperText,
               setBeers,
               setLoader,
               setNext,
