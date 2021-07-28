@@ -23,8 +23,8 @@ function handleSubmit(
     getBeersByDate(selectedDate, 1, setBeers, setLoader, setNext, setPrev);
   } else {
     setHelperText("Please select an option");
-  };
-};
+  }
+}
 
 function handleNameChange(event, setHelperText, setBeerName) {
   event.preventDefault();
@@ -32,18 +32,16 @@ function handleNameChange(event, setHelperText, setBeerName) {
   if (value.length === 0) setHelperText("Type something to search");
   else setHelperText("");
   setBeerName(value);
-};
+}
 
-function handleRadioChange(event, setValue, setPage){
-    setValue(event.target.value);
-    setPage(1);
-  };
+function handleRadioChange(event, setValue) {
+  setValue(event.target.value);
+}
 
-  function handleDateChange(date, setSelectedDate){
-    setSelectedDate(
-      date.target.value.slice(5, 7) + "-" + date.target.value.slice(0, 4)
-    );
-  };
-
+function handleDateChange(date, setSelectedDate) {
+  setSelectedDate(
+    date.target.value.slice(5, 7) + "-" + date.target.value.slice(0, 4)
+  );
+}
 
 export { handleSubmit, handleNameChange, handleRadioChange, handleDateChange };

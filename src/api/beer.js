@@ -15,10 +15,10 @@ function getRandomBeer(setBeer, setLoader) {
       console.log("response fecth", resp);
       setBeer(resp[0]);
       setLoader(false);
-      //return resp
     })
     .catch((err) => {
       ModalMessage("Ups", "Try again later", 5000);
+      setLoader(false);
       console.log("fetch err", err);
     });
 }
@@ -40,10 +40,10 @@ function getRadomNonAlcoholic(setBeer, setLoader) {
       if (resp.lenght > 0) setBeer(resp[0]);
       else ModalMessage("Ups", "No non-alcoholic beers could be found", 6000);
       setLoader(false);
-      //return resp
     })
     .catch((err) => {
       ModalMessage("Ups", "Try again later", 6000);
+      setLoader(false);
       console.log("fetch err", err);
     });
 }

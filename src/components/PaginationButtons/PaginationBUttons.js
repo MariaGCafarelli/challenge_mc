@@ -1,33 +1,65 @@
 import React from "react";
 import "./PaginationButtons.css";
 
-import { getBeersByDate } from "../../api/search";
+import { getBeersByName, getBeersByDate } from "../../api/search";
 
-function PaginationButtons({ page, next, prev, selectedDate, setBeers, setLoader, setNext, setPrev, setPage }) {
-    
+/**
+ * Componente that represents the
+ * current pagination state for each search
+ */
+function PaginationButtons({
+  value,
+  page,
+  next,
+  prev,
+  beerName,
+  selectedDate,
+  setBeers,
+  setLoader,
+  setNext,
+  setPrev,
+  setPage
+}) {
   function nextPage() {
     setPage(page + 1);
-    getBeersByDate(
-      selectedDate,
-      page + 1,
-      setBeers,
-      setLoader,
-      setNext,
-      setPrev
-    );
-  };
+    if (value === "name") {
+      getBeersByName(beerName, page + 1, setBeers, setLoader, setNext, setPrev);
+    } else {
+      getBeersByDate(
+        selectedDate,
+        page + 1,
+        setBeers,
+        setLoader,
+        setNext,
+        setPrev
+      );
+    }
+  }
 
   function prevPage() {
-    setPage(page - 1);
-    getBeersByDate(
-      selectedDate,
-      page - 1,
-      setBeers,
-      setLoader,
-      setNext,
-      setPrev
-    );
-  };
+    if (page > 1) {
+      setPage(page - 1);
+      if (value === "name") {
+        getBeersByName(
+          beerName,
+          page - 1,
+          setBeers,
+          setLoader,
+          setNext,
+          setPrev
+        );
+      } else {
+        getBeersByDate(
+          selectedDate,
+          page - 1,
+          setBeers,
+          setLoader,
+          setNext,
+          setPrev
+        );
+      }
+    }
+  }
 
   return (
     <div className="pagination-buttons">

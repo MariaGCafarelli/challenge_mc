@@ -1,6 +1,11 @@
 import Swal from "sweetalert2";
 import './Modal.css';
 
+/**
+ * Componente that represents the
+ * message display to user after an error
+ * with the api call
+ */
 const ModalMessage = (title, text, timer) => {
   Swal.fire({
     title: title,

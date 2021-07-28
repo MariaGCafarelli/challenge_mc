@@ -59,7 +59,7 @@ function Search() {
               aria-label="options"
               name="options"
               value={value}
-              onChange={(event) => handleRadioChange(event, setValue, setPage)}
+              onChange={(event) => handleRadioChange(event, setValue)}
             >
               <FormControlLabel
                 value="name"
@@ -79,18 +79,20 @@ function Search() {
           </FormControl>
         </form>
       </div>
-      
+
       {beers ? (
         beers.length > 0 ? (
           <>
             <PaginationButtons
-            page={page}
-            setPage={setPage}
+              value={value}
+              page={page}
+              setPage={setPage}
               next={next}
-              prev={prev}
-              selectedDate={selectedDate} 
-              setBeers={setBeers} 
-              setLoader={setLoader} 
+              prev={prev}              
+              beerName={beerName}
+              selectedDate={selectedDate}
+              setBeers={setBeers}
+              setLoader={setLoader}
               setNext={setNext}
               setPrev={setPrev}
             />
@@ -98,11 +100,15 @@ function Search() {
               <Beer beer={beer} key={index} />
             ))}
             <PaginationButtons
+              value={value}
+              page={page}
+              setPage={setPage}
               next={next}
-              prev={prev}
-              selectedDate={selectedDate} 
-              setBeers={setBeers} 
-              setLoader={setLoader} 
+              prev={prev}              
+              beerName={beerName}
+              selectedDate={selectedDate}
+              setBeers={setBeers}
+              setLoader={setLoader}
               setNext={setNext}
               setPrev={setPrev}
             />
