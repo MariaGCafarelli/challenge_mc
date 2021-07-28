@@ -6,7 +6,7 @@ import { ModalMessage } from "../components/ModalMessage/Modal";
  * @param {Function} setLoader
  * @param {String} name 
  */
-function getBeersByName(name, setBeers, setLoader) {
+function getBeersByName(name, page, setBeers, setLoader, setNext, setPrev) {
   setLoader(true);
   fetch(`${process.env.REACT_APP_ROOT_ENDPOINT}beers?beer_name=${name}`, {
     method: "GET",
@@ -42,7 +42,10 @@ function getBeersByName(name, setBeers, setLoader) {
     .then((resp) => {
       console.log("response fecth", resp);
       setBeers(resp);
-      if(resp.length < 20) setNext(false);
+      if(resp.length < 20){
+        setNext(false);
+        setPrev(true);
+      } 
       else {setNext(true); setPrev(true)};
       if(page === 1) setPrev(false);
       setLoader(false);

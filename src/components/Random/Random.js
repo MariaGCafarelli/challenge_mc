@@ -9,10 +9,8 @@ import Loader from "../Loader/Loader";
  * name, image and description to the user
  */
 function Random() {
-  /** State for current beer */
+  /** State for current beer and loader */
   let [beer, setBeer] = useState({});
-
-  /** State to set loader during beer changes */
   let [loader, setLoader] = useState(true);
 
   /**

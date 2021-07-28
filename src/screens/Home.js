@@ -1,7 +1,7 @@
 import React from "react";
 //import "./Home.css";
 import Random from "../components/Random/Random";
-import Search from "../components/BeerSearch/Search";
+import Search from "../components/Search/Search";
 
 /**
  * Componente que representa pop-up
