@@ -1,4 +1,4 @@
-** Glofox Frontend Position Challenge - María Cafarelli **
+## Glofox Frontend Position Challenge - María Cafarelli
 
 This repository contains the main 3mit landing, personal brand and styles of their belong.
 
@@ -43,7 +43,7 @@ The page will reload if you make edits. You will also see any lint errors in the
 
 Once the project has started, go to [http://localhost:3000](http://localhost:3000) to view it in the browser locally.
 
-# PROJECT Architecture
+# Project Architecture
 
 
 The source folder has 5 particular folders that organize the needs of the project:

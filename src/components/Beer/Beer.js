@@ -3,7 +3,8 @@ import "./Beer.css";
 
 /**
  * Componente that represents the
- * detail of each beer searched
+ * detail of each beer searched, image, name 
+ * and description
  */
 function Beer({ beer }) {
   return (
