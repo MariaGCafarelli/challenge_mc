@@ -1,6 +1,6 @@
 .random-container {
   padding: 20px;
-  width: 90%;
+  width: 85%;
   margin: auto;
   box-shadow: -1px 2px 5px rgba(128, 120, 140, 0.2) !important;
   border: 1px solid var(--uiLightGrey);
@@ -29,11 +29,11 @@ img {
 }
 
 .btn {
-  padding: 5px;
+  padding: 13px 10px 13px 10px;
   min-height: 50px;
   border-radius: 10px;
   border-color: var(--uiLightGrey);
-  background-color: blue;
+  background-color: var(--primaryBright);
   color: var(--off-white);
   box-shadow: -1px 2px 5px rgb(128 120 140 / 20%) !important;
 }

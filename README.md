@@ -1,4 +1,4 @@
-## Glofox Frontend Position Challenge - María Cafarelli
+# Frontend Position Challenge - María Cafarelli
 
 
 This repository contains the result of the test assigned to Maria Cafarelli for the position of Frontend Developer. 
@@ -16,8 +16,10 @@ The project was developed under this specifications:
 
 Important libreries:
 
-- "@material-ui/core": "^4.12.2",
-- "@material-ui/icons": "^4.11.2",
+- "styled-components": `https://styled-components.com/docs`
+- "@material-ui/core": `https://material-ui.com/`
+- "@material-ui/icons": `https://material-ui.com/es/getting-started/installation/`
+- "sweetalert2": `https://sweetalert2.github.io/`
 
 The PunkApi was used to obtain the information displayed, found at `https://punkapi.com`. 
 
@@ -26,7 +28,7 @@ The PunkApi was used to obtain the information displayed, found at `https://punk
 
 After cloning down this repository. You will need `node` and `npm` installed globally on your machine.
 
-## ENV VARIABLES
+## Env Variables
 
 
 A single environment variable is used with the URL corresponding to the api connection under the name `REACT_APP_ROOT_ENDPOINT` in the `.env` file. This decision was made based on being able to manage the routes according to the development environment in which it is located.
@@ -69,6 +71,16 @@ The source folder has 5 particular folders that organize the needs of the projec
 
 # Tests
 
-Although the challange required a validation test, I currently do not feel able to deliver a valuable result in this important area of ​​development. I am completely willing to learn and develop better as a professional in all areas, including this one, however I only handle the basic theory about it. In my current job we do not handle these practices, although they are extremely important.
 
-I understand the importance of rendering tests, and functionalities.
+Although the challange required a validation test, I currently do not feel able to deliver a valuable result in this area of ​​development. However, I did manual tests for each use case proposed in the challenge statement. 
+
+For the validation test using an externar library, I know that we would have to start doing rendering tests, guaranteeing that the parent component generates the app without problems, as well as the correct functionality of the random and search components. Next, it would be important to develop a test to test the inputs and their validations. Then, according to the theory I read, I should mock one of the call api; This would allow to test that the calls are generated well without making an extra call to the api. 
+
+I am completely willing to learn and develop better as a professional in all areas, including this one, however I only handle the basic theory about it. In my current job we do not handle these practices, although they are extremely important and that's why I know it's a disadvantage not to do it.
+
+# Extra comments
+
+
+- To get a non-alcoholic beer, I take advantage of the abv_lt parameter that the documentation offers with a number between and 0.5 and 1.5 and no result is obtained, so no need to apply any random.
+
+- I would have like to be able to show the number of pages associated with the paging of each search, however the documentation does not offer any parameters for that.

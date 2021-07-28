@@ -28,7 +28,8 @@ function getBeersByName(name, page, setBeers, setLoader, setNext, setPrev) {
       //return resp
     })
     .catch((err) => {
-      ModalMessage("Ups", "Try again later", 5000);
+      ModalMessage("Ups, something went wrong", "Try again later", 5500);
+      setLoader(false);
       console.log("fetch err", err);
     });
 };
@@ -61,7 +62,8 @@ function getBeersByName(name, page, setBeers, setLoader, setNext, setPrev) {
       //return resp
     })
     .catch((err) => {
-      ModalMessage("Ups", "Try again later", 5000);
+      ModalMessage("Ups, something went wrong", "Try again later", 5500);
+      setLoader(false);
       console.log("fetch err", err);
     });
 };

@@ -13,7 +13,7 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Loader from "../Loader/Loader";
-import PaginationButtons from "../PaginationButtons/PaginationBUttons";
+import PaginationButtons from "../PaginationButtons/PaginationButtons";
 
 /**
  * Componente that represents the

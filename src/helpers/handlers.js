@@ -25,18 +25,21 @@ function handleSubmit(
   setPage
 ) {
   event.preventDefault();
-  setBeers();
-  setPage(1);
   if (value === "name") {
-    if (beerName.length > 0 && helperText.length === 0)
+    if (beerName.length > 0 && helperText.length === 0) {
       getBeersByName(beerName, 1, setBeers, setLoader, setNext, setPrev);
-    else setHelperText("First type something!");
+      setBeers();
+      setPage(1);
+    } else if(beerName.length === 0) setHelperText("First type something!");
+      else if(helperText.length > 0) setHelperText("You can't use any special character, try again");
   } else if (value === "brewed_before") {
     getBeersByDate(selectedDate, 1, setBeers, setLoader, setNext, setPrev);
+    setBeers();
+    setPage(1);
   } else {
     setHelperText("Please select an option");
   }
-}
+};
 
 /**
  * Function to handle input change on search by name
@@ -47,9 +50,10 @@ function handleSubmit(
  */
 function handleNameChange(event, setHelperText, setBeerName) {
   event.preventDefault();
-  const { value } = event.target;
+  const { name, value } = event.target;
   if (value.length === 0) setHelperText("Type something to search");
-  else if (!(/^[a-z\d\-_\s]+$/i.test(value))) setHelperText("You can't use any special character, try again")
+  else if (!/^[a-z\d\-\s]+$/i.test(value))
+    setHelperText("You can't use any special character, try again");
   else setHelperText("");
   setBeerName(value);
 }

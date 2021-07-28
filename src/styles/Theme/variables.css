@@ -9,7 +9,8 @@
 
   /** Primary colors **/
 
-  --primaryDark: #18202c;
+  --primaryDark: #f05a3c;
+  --primaryBright: #736ef0;
 
   /** UI colors **/
   --off-black: #0b0b26;
