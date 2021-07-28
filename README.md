@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+** Glofox Frontend Position Challenge - María Cafarelli **
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the main 3mit landing, personal brand and styles of their belong.
 
-## Available Scripts
+# DEVELOPMENT ENVIRONMENT
 
-In the project directory, you can run:
+The project was developed under this specifications:
 
-### `npm start`
+- "react": "17.0.2"
+- "node": "14.16.0"
+- "npm": "6.14.11"
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Important libreries:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- "@material-ui/core": "^4.12.2",
+- "@material-ui/icons": "^4.11.2",
 
-### `npm test`
+The PunkApi was used to obtain the information displayed, found at `https://punkapi.com`. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# ENV VARIABLES
 
-### `npm run build`
+A single environment variable is used with the URL corresponding to the api connection under the name `REACT_APP_ROOT_ENDPOINT` in the `.env` file.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# INSTALLATION AND SETUP INSTRUCTIONS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation:
 
-### `npm run eject`
+- `npm install`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This must be the first step to run this application. Downloads dependencies defined in a package.json file and generates a node_modules folder with the installed modules.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## To Start Server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- `npm start`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Open [http://localhost:3000](http://localhost:3000) to view your work in the browser.
 
-## Learn More
+The page will reload if you make edits. You will also see any lint errors in the console.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## To Visit App:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Once the project has started, go to [http://localhost:3000](http://localhost:3000) to view it in the browser locally.
 
-### Code Splitting
+# PROJECT Architecture
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+The source folder has 5 particular folders that organize the needs of the project:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- api: contains the functions for each call to the api and handles the responses
 
-### Making a Progressive Web App
+- components: contains each component deployed to the user. The main ones are: search and random, then beer; finally pagination buttons, loader and modal message are useful to the user experience.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- helpers: contains the functions that handle the actions performed by each component, they also serve as a connection between the api and the component
 
-### Advanced Configuration
+- screens: contains the main components included for the view
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- styles: contains all the global style of the application, color and text variables are defined, as well as font sizes for texts
