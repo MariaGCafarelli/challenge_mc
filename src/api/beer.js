@@ -12,14 +12,14 @@ function getRandomBeer(setBeer, setLoader) {
   })
     .then((resp) => resp.json())
     .then((resp) => {
-      console.log("response fecth", resp);
+      //console.log("response fecth", resp);
       setBeer(resp[0]);
       setLoader(false);
     })
     .catch((err) => {
       ModalMessage("Ups, something went wrong", "Try again later", 5500);
       setLoader(false);
-      console.log("fetch err", err);
+      //console.log("fetch err", err);
     });
 }
 
@@ -44,7 +44,7 @@ function getRadomNonAlcoholic(setBeer, setLoader) {
     .catch((err) => {
       ModalMessage("Ups", "Try again later", 6000);
       setLoader(false);
-      console.log("fetch err", err);
+      //console.log("fetch err", err);
     });
 }
 

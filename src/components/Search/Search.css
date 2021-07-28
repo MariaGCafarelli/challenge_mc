@@ -23,3 +23,8 @@
 .MuiRadio-colorSecondary.Mui-checked {
     color: var(--primaryDark) !important;
 }
+
+.MuiFormHelperText-root{
+    width: 120px !important;
+    margin-top: 0 !important;
+}

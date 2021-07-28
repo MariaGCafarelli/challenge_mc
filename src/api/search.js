@@ -16,7 +16,7 @@ function getBeersByName(name, page, setBeers, setLoader, setNext, setPrev) {
   })
     .then((resp) => resp.json())
     .then((resp) => {
-      console.log("response fecth", resp);
+      //console.log("response fecth", resp);
       setBeers(resp);
       if(resp.length < 20){
         setNext(false);
@@ -30,7 +30,7 @@ function getBeersByName(name, page, setBeers, setLoader, setNext, setPrev) {
     .catch((err) => {
       ModalMessage("Ups, something went wrong", "Try again later", 5500);
       setLoader(false);
-      console.log("fetch err", err);
+      //console.log("fetch err", err);
     });
 };
 
@@ -50,7 +50,7 @@ function getBeersByName(name, page, setBeers, setLoader, setNext, setPrev) {
   })
     .then((resp) => resp.json())
     .then((resp) => {
-      console.log("response fecth", resp);
+      //console.log("response fecth", resp);
       setBeers(resp);
       if(resp.length < 20){
         setNext(false);
@@ -64,7 +64,7 @@ function getBeersByName(name, page, setBeers, setLoader, setNext, setPrev) {
     .catch((err) => {
       ModalMessage("Ups, something went wrong", "Try again later", 5500);
       setLoader(false);
-      console.log("fetch err", err);
+      //console.log("fetch err", err);
     });
 };
 

@@ -29,13 +29,13 @@ function Random() {
           <h1 className="content content-large">{beer.name}</h1>
           <div className="random">
             <div className="random-beer">
-              {beer.image_url && (
+              {beer.image_url ? (
                 <img
                   src={beer.image_url}
                   alt="beer-img"
                   className="random-beer-img"
                 />
-              )}
+              ) : (<div className="default-img"></div>)}
             </div>
             <div className="random-beer-description">
               <p className="content content-medium">{beer.description}</p>

@@ -24,6 +24,15 @@ img {
   background-color: var(--uiLightGrey);
 }
 
+.default-img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  background-color: var(--uiLightGrey);
+  margin: auto;
+  border: 1px solid var(--uiMidGrey) 
+}
+
 .random-beer-description {
   width: 50%;
 }

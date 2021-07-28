@@ -50,7 +50,7 @@ function handleSubmit(
  */
 function handleNameChange(event, setHelperText, setBeerName) {
   event.preventDefault();
-  const { name, value } = event.target;
+  const value = event.target.value;
   if (value.length === 0) setHelperText("Type something to search");
   else if (!/^[a-z\d\-\s]+$/i.test(value))
     setHelperText("You can't use any special character, try again");

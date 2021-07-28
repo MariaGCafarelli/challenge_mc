@@ -5,6 +5,8 @@ This repository contains the result of the test assigned to Maria Cafarelli for 
 
 The result shows random search results for beers and non-alcoholic beers; You can also do more specific searches by name and brewed before. Validations were made according to the selected input, the results are displayed and an error message is shown otherwise.
 
+You can find the deployment of the application in: `https://challenge-mc.web.app/`
+
 # DEVELOPMENT ENVIRONMENT
 
 
